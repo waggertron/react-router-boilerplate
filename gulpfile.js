@@ -26,7 +26,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('build/css/fonts'));
 
   // Compiles CSS
-  gulp.src('css/style.scss')
+  gulp.src('css/styles.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(gulp.dest('./build/css/'))
@@ -76,13 +76,13 @@ function buildScript(file, watch) {
     return stream
       .on('error', handleErrors)
       .pipe(source(file))
-      .pipe(gulp.dest('./build/'))
+      .pipe(gulp.dest('./build/bundle.js'))
       // If you also want to uglify it
       // .pipe(buffer())
       // .pipe(uglify())
       // .pipe(rename('app.min.js'))
-      // .pipe(gulp.dest('./build'))
-      .pipe(reload({ stream: true }))
+      // .pipe(gulp.dest('./build/bundle.js'))
+      .pipe(reload({ stream: true }));
   }
 
   // listen for an update and run rebundle
@@ -102,5 +102,5 @@ gulp.task('scripts', () =>
 // run 'scripts' task first, then watch for future changes
 gulp.task('default', ['images', 'styles', 'scripts', 'browser-sync'], () => {
   gulp.watch('css/**/*', ['styles']); // gulp watch for sass changes
-  return buildScript('main.js', true); // browserify watch for JS changes
+  return buildScript('main.jsx', true); // browserify watch for JS changes
 });
