@@ -1,19 +1,16 @@
 /*
   App
 */
-
 import React from 'react';
-import Header from './Header';
 import Catalyst from 'react-catalyst';
 import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
-
+import Header from './Header.jsx';
 
 class App extends React.Component {
 
   constructor() {
     super();
-
     this.state = {};
   }
 
@@ -45,14 +42,12 @@ class App extends React.Component {
       <div className="catch-of-the-day">
         <div className="menu">
           <Header title="Your title here" />
-          <ul className="">
-          </ul>
+          <ul className="" />
         </div>
       </div>
-    )
+    );
   }
-
-};
+}
 
 reactMixin.onClass(App, Catalyst.LinkedStateMixin);
 
