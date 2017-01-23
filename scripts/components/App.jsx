@@ -2,9 +2,9 @@
   App
 */
 import React from 'react';
-import Catalyst from 'react-catalyst';
-import reactMixin from 'react-mixin';
-import autobind from 'autobind-decorator';
+// import Catalyst from 'react-catalyst';
+// import reactMixin from 'react-mixin';
+// import autobind from 'autobind-decorator';
 import Header from './Header.jsx';
 
 class App extends React.Component {
@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
-          <Header title="Your title here" />
+          <Header title="Your title here" className="" />
           <ul className="" />
         </div>
       </div>
@@ -49,6 +49,6 @@ class App extends React.Component {
   }
 }
 
-reactMixin.onClass(App, Catalyst.LinkedStateMixin);
+// reactMixin.onClass(App, Catalyst.LinkedStateMixin);
 
 export default App;
